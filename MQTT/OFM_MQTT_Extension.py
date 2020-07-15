@@ -5,7 +5,9 @@ Created on Thu Jul  9 10:25:48 2020
 
 @author: bene
 """
-from MQTTInit import MQTT
+import sys
+#sys.path.append('./')
+from MQTTInit import *
 
 from labthings.server.extensions import BaseExtension
 from labthings.server.find import find_component
@@ -69,9 +71,7 @@ class MQTTAPI(ActionView):
 
         # Create and start "timelapse", running in a background task
         command = 'Dummy'
-        return sendmqtt(microscope, mqttdevice, command)
-        )
-    
+        return sendmqtt(microscope, mqttdevice, command)    
 
 
 ## Extension GUI (OpenFlexure eV)
@@ -120,3 +120,4 @@ my_extension.add_view(MQTTAPI, "/sendmqtt")
 
 # Add OpenFlexure eV GUI to your extension
 my_extension.add_meta("gui", build_gui(extension_gui, my_extension))
+

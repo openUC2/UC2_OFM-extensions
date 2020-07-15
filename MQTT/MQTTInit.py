@@ -6,9 +6,9 @@ import os
 #import serial
 import socket
 import time
-import yaml
+#import yaml
 
-from MQTTDevice import MQTTDevice
+from MQTTDevice import *
 import paho.mqtt.client as mqtt
 
 # MQTT Functions ------------------------------------------------------------------------------
